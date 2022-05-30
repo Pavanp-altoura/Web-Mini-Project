@@ -1,0 +1,24 @@
+{
+    "BIRDS": [
+      {
+        "imgPath": "/images/images.png"
+      },
+      {
+        "imgPath":  "/images/images.png"
+      },
+      {
+        "imgPath":  "/images/images.png"
+      }
+    ],
+    "ANIMALS": [
+      {
+        "imgPath":  "/images/images.png"
+      },
+      {
+        "imgPath":  "/images/images.png"
+      },
+      {
+        "imgPath":  "/images/images.png"
+      }
+    ]
+  }

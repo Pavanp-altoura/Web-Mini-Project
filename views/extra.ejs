@@ -1,0 +1,54 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="StyleSheet.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css"
+          rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.button').click(function () {
+                $('.button').attr('style', 'display:none');
+                $(this).attr('style', 'display:block');
+                return false;
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+                var jsonURL = "image.json";
+                $.getJSON(jsonURL, function (json) {
+                    var imgList = "";
+  
+                    $.each(json.BIRDS, function () {
+                        imgList += '<li><img src= "' + this.imgPath + '"></li>';
+                    });
+  
+  
+                    $('#dvimage').append(imgList);
+                });
+            });
+    </script>
+</head>
+<body>
+    <div>
+        <div class="div" id="dvimage">
+            <button class ="button" id ="mybutton">
+                GET BIRDS
+            </button>
+            <button class ="button" id ="mybutton1">
+                GET ANIMALS
+            </button>
+            <button class ="button" id ="mybutton2">
+                GET OCCEAN
+            </button>
+            <button class ="button" id= "mybutton3">
+                GET NATURE
+            </button>
+        </div>
+    </div>
+</body>
+</html>

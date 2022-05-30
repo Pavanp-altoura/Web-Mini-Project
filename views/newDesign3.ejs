@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="/javascript/lib/jquery-3.5.0.js"></script>
+<title> This is an example for jQuery array sort() function </title>
+<style>
+#p1 {
+color: blue;
+}
+#p2 {
+color: green;
+}
+#p3 {
+color: red;
+}
+</style>
+</head>
+<body>
+<h3> This is an Example for array sort() function : </h3>
+<table id='table'>
+    <!-- HEADING FORMATION -->
+    <tr>
+        <th>Id</th>
+        <th>Emp ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id = "s1"> </p>
+<button onclick = "checkRes()" > Click here to get marks in ascending order. </button>
+<p id = "p1"> </p>
+<p id = "p2"> </p>
+<p id = "p3"> </p>
+<script>
+var marks = [ 50, 78, 40, 89, 60, 57, 90 ];
+
+var myObj = <%- JSON.stringify(employeesArray)%>;
+//var myObj1 = JSON.parse(myObj);
+
+//document.getElementById("demo").innerHTML = myObj.Id;
+
+var a=$( "#demo" ).text(JSON.stringify(myObj));
+$("demo1").text(a);
+//$( "#demo" ).text(JSON.stringify(myObj1));
+
+
+
+
+//starts from here
+
+$(document).ready(function () {
+
+// FETCHING DATA FROM JSON FILE
+$.getJSON(myObj,
+        function (data) {
+    var student = '';
+
+    // ITERATING THROUGH OBJECTS
+    $.each(data, function (key, value) {
+
+        //CONSTRUCTION OF ROWS HAVING
+        // DATA FROM JSON OBJECT
+        student += '<tr>';
+        student += '<td>' +
+            value.Id + '</td>';
+
+        student += '<td>' +
+            value.Emp_Name + '</td>';
+
+        student += '<td>' +
+            value.First_Name + '</td>';
+
+        student += '<td>' +
+            value.Last_Name + '</td>';
+
+        student += '</tr>';
+    });
+    
+    //INSERTING ROWS INTO TABLE
+    $('#table').append(student);
+});
+});
+
+
+//ends here
+function ch(myObj)
+{
+    jQuery.each(myObj)
+    {
+        $( "#s1" ).text(myobj);
+
+    }
+
+}
+
+function checkRes()
+{
+$( "#p1" ).text("The marks of an given array before sort() function is : " + marks);
+var res = marks.sort();
+$( "#p2" ).text("The marks of a new array after sort() function is : " + res);
+$( "#p3" ).text("The marks of a original array after sort() function is : " + marks);
+}
+</script>
+</body>
+</html>
